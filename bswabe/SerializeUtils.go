@@ -79,27 +79,27 @@ func UnSerializeBswabePub(b []byte) *BswabePub {
 	return pub
 }
 
-func serializeBswabeMsk(msk *BswabeMsk) []byte {
-	var arrlist []byte
-
-	serializeElement(&arrlist, msk.beta);
-	serializeElement(&arrlist, msk.g_alpha);
-
-	return arrlist
-}
-
-func unserializeBswabeMsk(pub *BswabePub, b []byte) *BswabeMsk {
-	offset := 0
-	msk := new(BswabeMsk)
-
-	msk.beta = pub.p.NewZr()
-	msk.g_alpha = pub.p.NewG2()
-
-	offset = unserializeElement(b, offset, msk.beta)
-	offset = unserializeElement(b, offset, msk.g_alpha)
-
-	return msk
-}
+//func serializeBswabeMsk(msk *BswabeMsk) []byte {
+//	var arrlist []byte
+//
+//	serializeElement(&arrlist, msk.beta);
+//	serializeElement(&arrlist, msk.g_alpha);
+//
+//	return arrlist
+//}
+//
+//func unserializeBswabeMsk(pub *BswabePub, b []byte) *BswabeMsk {
+//	offset := 0
+//	msk := new(BswabeMsk)
+//
+//	msk.beta = pub.p.NewZr()
+//	msk.g_alpha = pub.p.NewG2()
+//
+//	offset = unserializeElement(b, offset, msk.beta)
+//	offset = unserializeElement(b, offset, msk.g_alpha)
+//
+//	return msk
+//}
 
 func SerializeBswabePrv(prv *BswabePrv) []byte {
 	var arrlist []byte
